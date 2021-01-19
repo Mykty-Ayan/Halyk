@@ -1,4 +1,5 @@
-# Scrapy settings for qamqor_parser project
+# Scrapy settings for goszakup_parser project
+# Scrapy settings for goszakup_parser project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,13 +10,13 @@
 
 from shutil import which
 
-BOT_NAME = 'qamqor_parser'
+BOT_NAME = 'goszakup_parser'
 
-SPIDER_MODULES = ['qamqor_parser.spiders']
-NEWSPIDER_MODULE = 'qamqor_parser.spiders'
+SPIDER_MODULES = ['goszakup_parser.spiders']
+NEWSPIDER_MODULE = 'goszakup_parser.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'qamqor_parser (+http://www.yourdomain.com)'
+# USER_AGENT = 'goszakup_parser (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -46,15 +47,14 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'qamqor_parser.middlewares.QamqorParserSpiderMiddleware': 543,
+#    'goszakup_parser.middlewares.QamqorParserSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    'qamqor_parser.middlewares.QamqorParserDownloaderMiddleware': 543,
-    'scrapy_selenium.SeleniumMiddleware': 800,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     'goszakup_parser.middlewares.QamqorParserDownloaderMiddleware': 543,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -64,9 +64,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'qamqor_parser.pipelines.QamqorParserPipeline': 300,
-# }
+ITEM_PIPELINES = {
+   'goszakup_parser.pipelines.TenderParserPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -89,9 +89,11 @@ DOWNLOADER_MIDDLEWARES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-
-SELENIUM_DRIVER_NAME = 'firefox'
-
-SELENIUM_DRIVER_EXECUTABLE_PATH = which('geckodriver')
-
-SELENIUM_DRIVER_ARGUMENTS = ['-headless']
+DATABASE = {
+    'drivername': 'sqlite',
+    # 'host': 'localhost',
+    # 'port': '5432',
+    # 'username': 'YOUR_USERNAME',
+    # 'password': 'YOUR_PASSWORD',
+    'database': 'companies.sqlite'
+}
