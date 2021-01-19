@@ -1,6 +1,5 @@
 <h1>Halyk Bank testing tasks</h1>
 <h2>List of tasks</h2>
-<hr/>
 <ol>
 <li>C# simple app</li>
 <li>Python PDF reader</li>
@@ -8,7 +7,7 @@
 </ol>
 
 <h2>To run Python scripts</h2>
-<hr/>
+
 <p><code>pip install -r requirements.txt</code></p>
 <p>Code to start crawler <code>scrapy crawl tender</code> ensure that you in <code>python/</code> directory.</p>
 
