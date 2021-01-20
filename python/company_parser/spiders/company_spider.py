@@ -9,6 +9,7 @@ class CompanySpider(scrapy.Spider):
     name = 'tender'
 
     page_number = 2
+    # for simple parser I choose to parse only 15 pages of site
     last_page = 15
 
     start_urls = ['https://tenderplus.kz/organization?page=1']
