@@ -1,5 +1,5 @@
-# Scrapy settings for goszakup_parser project
-# Scrapy settings for goszakup_parser project
+# Scrapy settings for company_parser project
+# Scrapy settings for company_parser project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -10,13 +10,13 @@
 
 from shutil import which
 
-BOT_NAME = 'goszakup_parser'
+BOT_NAME = 'company_parser'
 
-SPIDER_MODULES = ['goszakup_parser.spiders']
-NEWSPIDER_MODULE = 'goszakup_parser.spiders'
+SPIDER_MODULES = ['company_parser.spiders']
+NEWSPIDER_MODULE = 'company_parser.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'goszakup_parser (+http://www.yourdomain.com)'
+# USER_AGENT = 'company_parser (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'goszakup_parser.middlewares.QamqorParserSpiderMiddleware': 543,
+#    'company_parser.middlewares.QamqorParserSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#     'goszakup_parser.middlewares.QamqorParserDownloaderMiddleware': 543,
+#     'company_parser.middlewares.QamqorParserDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'goszakup_parser.pipelines.TenderParserPipeline': 300,
+   'company_parser.pipelines.CompanyParserPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,11 +89,3 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-DATABASE = {
-    'drivername': 'sqlite',
-    # 'host': 'localhost',
-    # 'port': '5432',
-    # 'username': 'YOUR_USERNAME',
-    # 'password': 'YOUR_PASSWORD',
-    'database': 'companies.sqlite'
-}

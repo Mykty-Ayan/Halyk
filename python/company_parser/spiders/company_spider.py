@@ -2,19 +2,20 @@ import scrapy
 
 from w3lib.html import remove_tags
 
-from ..items import TenderLot
+from ..items import Company
 
 
-class TenderSpider(scrapy.Spider):
+class CompanySpider(scrapy.Spider):
     name = 'tender'
 
     page_number = 2
+    last_page = 15
 
     start_urls = ['https://tenderplus.kz/organization?page=1']
 
     def parse(self, response, **kwargs):
-        items = TenderLot()
-        last_page = 15
+        items = Company()
+
         companies = response.css('div.company-teaser')
         for company in companies:
             company_name = company.css('a.link::text').get()
@@ -26,7 +27,7 @@ class TenderSpider(scrapy.Spider):
             yield items
 
         next_page = f'https://tenderplus.kz/organization?page={self.page_number}'
-        if self.page_number <= last_page:
+        if self.page_number <= self.last_page:
             self.page_number += 1
             yield scrapy.Request(next_page, callback=self.parse)
 

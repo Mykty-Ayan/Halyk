@@ -6,7 +6,7 @@
 import scrapy
 
 
-class TenderLot(scrapy.Item):
+class Company(scrapy.Item):
     # define the fields for your item here like:
     company_name = scrapy.Field()
     company_manager = scrapy.Field()

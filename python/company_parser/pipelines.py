@@ -9,7 +9,7 @@ import sqlite3
 # useful for handling different item types with a single interface
 
 
-class TenderParserPipeline:
+class CompanyParserPipeline:
     def __init__(self):
         self.create_connection()
         self.create_table()
