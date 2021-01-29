@@ -9,7 +9,7 @@
 <h2>To run Python scripts</h2>
 
 <p><code>pip install -r requirements.txt</code></p>
-<p>Code to start crawler <code>scrapy crawl tender</code> ensure that you in <code>python/</code> directory.</p>
+<p>Code to start crawler <code>scrapy crawl tender</code> ensure that you in <code>python/</code> directory. This code automatically create sqlite database</p>
 
 <h2>Author</h2>
 <ul>
